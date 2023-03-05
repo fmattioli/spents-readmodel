@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.123" />
+    <ProjectReference Include="..\Spents.ReadModel.Domain\Spents.ReadModel.Domain.csproj" />
   </ItemGroup>
 
 </Project>

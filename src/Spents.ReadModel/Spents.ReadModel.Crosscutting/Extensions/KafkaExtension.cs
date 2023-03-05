@@ -3,10 +3,8 @@ using KafkaFlow.Admin.Dashboard;
 using KafkaFlow.Configuration;
 using KafkaFlow.Serializer;
 using KafkaFlow.TypedHandler;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-
 using Spents.ReadModel.Application.Kafka.Handlers;
 using Spents.ReadModel.Application.Kafka.KafkaBus;
 using Spents.ReadModel.Application.Kafka.Middlewares;
@@ -53,10 +51,10 @@ namespace Spents.ReadModel.Crosscutting.Extensions
                     .WithBrokers(settings.Sasl_Brokers)
                     .WithSecurityInformation(si =>
                     {
-                        si.SecurityProtocol = KafkaFlow.Configuration.SecurityProtocol.SaslSsl;
+                        si.SecurityProtocol = SecurityProtocol.SaslSsl;
                         si.SaslUsername = settings.Sasl_UserName;
                         si.SaslPassword = settings.Sasl_Password;
-                        si.SaslMechanism = KafkaFlow.Configuration.SaslMechanism.Plain;
+                        si.SaslMechanism = SaslMechanism.Plain;
                         si.SslCaLocation = string.Empty;
                     });
             }
@@ -74,12 +72,12 @@ namespace Spents.ReadModel.Crosscutting.Extensions
         {
             builder.AddConsumer(
                 consumer => consumer
-                     .Topics(Spents.Topics.KafkaTopics.Events.Receipt)
-                     .WithGroupId("ReceiptEvents")
+                     .Topics(KafkaTopics.Events.Receipt)
+                     .WithGroupId("Receipts")
                      .WithName("Receipt-Events")
                      .WithBufferSize(settings.BufferSize)
                      .WithWorkersCount(settings.WorkerCount)
-                     .WithAutoOffsetReset(KafkaFlow.AutoOffsetReset.Latest)
+                     .WithAutoOffsetReset(AutoOffsetReset.Latest)
                      .AddMiddlewares(
                         middlewares =>
                             middlewares

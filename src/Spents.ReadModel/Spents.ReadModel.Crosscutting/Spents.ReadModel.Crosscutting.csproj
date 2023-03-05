@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Spents.ReadModel.Application.Kafka\Spents.ReadModel.Application.Kafka.csproj" />
+    <ProjectReference Include="..\Spents.ReadModel.Infrastructure\Spents.ReadModel.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
