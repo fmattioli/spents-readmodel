@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.Crosscutti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.Infrastructure", "Spents.ReadModel.Infrastructure\Spents.ReadModel.Infrastructure.csproj", "{06FE64CC-765B-4B2A-9EBF-0D29FCCF612F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spents.ReadModel.API", "Spents.ReadModel.API\Spents.ReadModel.API.csproj", "{CDA93378-4C67-4CD1-B67F-011C96F0BCB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.API", "Spents.ReadModel.API\Spents.ReadModel.API.csproj", "{CDA93378-4C67-4CD1-B67F-011C96F0BCB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spents.ReadModel.Application", "Spents.ReadModel.Application\Spents.ReadModel.Application.csproj", "{AC0F0C63-E5B0-49F9-9F97-4E9091590FED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.Application", "Spents.ReadModel.Application\Spents.ReadModel.Application.csproj", "{AC0F0C63-E5B0-49F9-9F97-4E9091590FED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spents.ReadModel.Application.Kafka", "Spents.ReadModel.Application.Kafka\Spents.ReadModel.Application.Kafka.csproj", "{5069673F-89C2-4546-BFD7-130737F295DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.Application.Kafka", "Spents.ReadModel.Application.Kafka\Spents.ReadModel.Application.Kafka.csproj", "{5069673F-89C2-4546-BFD7-130737F295DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spents.ReadModel.Domain", "Spents.ReadModel.Domain\Spents.ReadModel.Domain.csproj", "{9B448E3E-B478-4DC3-A17D-E56CFA885D70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spents.ReadModel.Domain", "Spents.ReadModel.Domain\Spents.ReadModel.Domain.csproj", "{9B448E3E-B478-4DC3-A17D-E56CFA885D70}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Spents.ReadModel.Database", "Spents.ReadModel.Database\Spents.ReadModel.Database.sqlproj", "{CA149D32-2695-4235-9379-EE8E45360898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,12 @@ Global
 		{9B448E3E-B478-4DC3-A17D-E56CFA885D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B448E3E-B478-4DC3-A17D-E56CFA885D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B448E3E-B478-4DC3-A17D-E56CFA885D70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA149D32-2695-4235-9379-EE8E45360898}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

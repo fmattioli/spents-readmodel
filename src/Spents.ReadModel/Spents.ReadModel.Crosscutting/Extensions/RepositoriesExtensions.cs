@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Spents.ReadModel.Domain.Interfaces;
+using Spents.ReadModel.Infrastructure.Data;
 using Spents.ReadModel.Infrastructure.Persistence;
 
 namespace Spents.ReadModel.Crosscutting.Extensions
@@ -8,6 +9,7 @@ namespace Spents.ReadModel.Crosscutting.Extensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<DbSession>();
             services.AddSingleton<IReceiptRepository, ReceiptRepository>();
             return services;
         }
