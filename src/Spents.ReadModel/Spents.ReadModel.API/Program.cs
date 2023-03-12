@@ -1,6 +1,7 @@
 using KafkaFlow;
 
 using Spents.ReadModel.Crosscutting.Extensions;
+using Spents.ReadModel.Crosscutting.Middlewares;
 using Spents.ReadModel.Crosscutting.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,10 @@ var applicationSettings = builder.Configuration.GetSection("Settings").Get<Setti
 builder.Services
     .AddKafka(applicationSettings.KafkaSettings)
     .AddRepositories()
+    .AddLoggingDependency()
+    .AddMiddlewares()
     .AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -36,7 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();

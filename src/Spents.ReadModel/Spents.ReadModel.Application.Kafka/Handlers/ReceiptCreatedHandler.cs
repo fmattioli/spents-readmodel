@@ -22,21 +22,19 @@ namespace Spents.ReadModel.Application.Kafka.Handlers
         {
             if (message is not null && message.Body != null)
             {
-                var receipt = new ReceiptEntity
+                 await _receiptRepository.AddReceipt(new ReceiptEntity
                 {
                     Id = message.Body.Id,
                     EstablishmentName = message.Body.EstablishmentName,
                     ReceiptDate = message.Body.ReceiptDate,
                     ReceiptItems = message.Body.ReceiptItems,
-                };
-
-                await _receiptRepository.AddReceipt(receipt);
+                });
 
                 this.log.Information(
-                    $"Kafka message received and processed.",
+                    $"Receipt created with successfully.",
                     () => new
                     {
-                        message
+                        message.Body
                     });
             }
         }

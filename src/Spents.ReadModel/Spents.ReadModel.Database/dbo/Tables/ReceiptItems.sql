@@ -6,8 +6,7 @@
     [Quantity]      SMALLINT         NULL,
     [ItemPrice]     MONEY            NULL,
     [Observation]   VARCHAR (200)    NULL,
-    [TotalPrice]    AS               ([ItemPrice]*[Quantity]),
-    [ReceiptDate]   DATETIME         NULL,
+    [TotalPrice]    AS               ([ItemPrice]*[Quantity])
     PRIMARY KEY CLUSTERED ([Id] ASC),
     FOREIGN KEY ([FK_Receipt_Id]) REFERENCES [dbo].[Receipts] ([Id])
 );

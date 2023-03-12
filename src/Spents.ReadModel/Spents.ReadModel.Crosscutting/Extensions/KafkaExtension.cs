@@ -86,7 +86,7 @@ namespace Spents.ReadModel.Crosscutting.Extensions
                             .Add<ConsumerRetryMiddleware>()
                             .AddTypedHandlers(
                                 h => h
-                                    .WithHandlerLifetime(InstanceLifetime.Singleton)
+                                    .WithHandlerLifetime(InstanceLifetime.Scoped)
                                     .AddHandler<ReceiptCreatedHandler>()
                                     )
                             )

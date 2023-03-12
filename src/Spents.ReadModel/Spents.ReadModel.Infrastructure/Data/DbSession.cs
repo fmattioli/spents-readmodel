@@ -10,7 +10,8 @@ namespace Spents.ReadModel.Infrastructure.Data
 
         public DbSession(IConfiguration configuration)
         {
-            Connection = new SqlConnection(configuration.GetConnectionString("SqlSettings:ConnectionString"));
+            var connection = new SqlConnection(configuration.GetSection("Settings:SqlSettings:ConnectionString").Value);
+            Connection = connection;
             Connection.Open();
         }
 

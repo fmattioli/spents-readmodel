@@ -10,7 +10,7 @@ namespace Spents.ReadModel.Crosscutting.Extensions
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<DbSession>();
-            services.AddSingleton<IReceiptRepository, ReceiptRepository>();
+            services.AddTransient<IReceiptRepository, ReceiptRepository>();
             return services;
         }
     }
