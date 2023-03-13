@@ -6,14 +6,27 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>d0deb865-5b64-4535-9e16-bd6e44d52e54</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>C:\projects\spents-readmodel\src\Spents.ReadModel\Spents.ReadModel.API\bin\Debug\net6.0\Spents.ReadModel.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Spents.ReadModel.Application\Spents.ReadModel.Application.csproj" />
     <ProjectReference Include="..\Spents.ReadModel.Crosscutting\Spents.ReadModel.Crosscutting.csproj" />
   </ItemGroup>
 

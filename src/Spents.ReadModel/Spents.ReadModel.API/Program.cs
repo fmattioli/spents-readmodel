@@ -1,5 +1,6 @@
 using KafkaFlow;
-
+using Microsoft.OpenApi.Models;
+using Spents.ReadModel.API.Extensions;
 using Spents.ReadModel.Crosscutting.Extensions;
 using Spents.ReadModel.Crosscutting.Middlewares;
 using Spents.ReadModel.Crosscutting.Models;
@@ -20,13 +21,19 @@ var applicationSettings = builder.Configuration.GetSection("Settings").Get<Setti
 builder.Services
     .AddKafka(applicationSettings.KafkaSettings)
     .AddRepositories()
+    .AddDependecyInjection()
     .AddLoggingDependency()
     .AddMiddlewares()
     .AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Spents ReadModel", Version = "v1" });
+    c.IncludeXmlComments(Path.Combine(System.AppContext.BaseDirectory, "Spents.ReadModel.xml"));
+});
+
 
 var app = builder.Build();
 
