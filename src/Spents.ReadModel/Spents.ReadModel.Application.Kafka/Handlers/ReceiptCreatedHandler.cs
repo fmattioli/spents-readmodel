@@ -22,7 +22,7 @@ namespace Spents.ReadModel.Application.Kafka.Handlers
         {
             if (message is not null && message.Body != null)
             {
-                 await _receiptRepository.AddReceipt(new ReceiptEntity
+                 await _receiptRepository.AddReceiptAsync(new ReceiptEntity
                 {
                     Id = message.Body.Id,
                     EstablishmentName = message.Body.EstablishmentName,
