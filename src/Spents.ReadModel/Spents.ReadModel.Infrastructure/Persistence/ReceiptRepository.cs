@@ -28,6 +28,11 @@ namespace Spents.ReadModel.Infrastructure.Persistence
             await AddReceiptItemsAsync(pk_Receipt, receipt.ReceiptItems);
         }
 
+        public Task<IReadOnlyCollection<ReceiptEntity>> GetReceipts(params string[] filters)
+        {
+            throw new NotImplementedException();
+        }
+
         private async Task AddReceiptItemsAsync(int pk_Receipt, IEnumerable<ReceiptItem> receiptItems)
         {
             using var conn = _db.Connection;
